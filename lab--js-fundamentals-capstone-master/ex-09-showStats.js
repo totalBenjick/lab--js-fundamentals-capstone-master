@@ -16,14 +16,33 @@
  *     inputArraySize: 11
  *   }
 **/
+function showStats(number,array){
+	var resultado ={}
+	var conteoEqual = 0;
+	var conteoMenorque = 0;
+	var conteoMayorque = 0;
 
+	for (var i = 0; i < array.length; i++) {
+		var numeroDin = array[i]
 
+		if (number === numeroDin) {
+			++conteoEqual
+		}
+		if (number > numeroDin) {
+			++conteoMayorque
+		}
+		if (number < numeroDin) {
+			++conteoMenorque
+		}
 
-
-
-
-
-
+	}
+	resultado["count_inputEqualTo"] = conteoEqual;
+	resultado["count_inputGreaterThan"] = conteoMayorque;
+	resultado["count_inputLessThan"] = conteoMenorque;
+	resultado["inputArraySize"] = array.length;
+	console.log(resultado)
+	return resultado;
+}
 //*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
 
 var parkingTicketsCount = [33, 44, 22, 21, 92, 63, 12, 42, 56, 11, 99,
